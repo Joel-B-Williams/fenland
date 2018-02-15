@@ -7,5 +7,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  # constraints subdomain: "hooks" do
+  # 	post '/:integration_name' => 'webhooks#receive'
+  # end
+  post '/:integration_name', to: 'webhooks#receive'
+
   resources :users
 end
