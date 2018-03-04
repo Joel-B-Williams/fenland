@@ -1,11 +1,14 @@
 class UsersController < ApplicationController
+	include UserSessions
 
 	def new
 		@user = User.new
 	end
 
 	def create
-		if User.create(user_params)
+		user = User.create(user_params)
+		if user
+			login(user)
 			redirect_to root_path
 		else
 			render 'new'

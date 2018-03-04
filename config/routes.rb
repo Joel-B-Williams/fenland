@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   # constraints subdomain: "hooks" do
   # 	post '/:integration_name' => 'webhooks#receive'
   # end
-  post '/:integration_name', to: 'webhooks#receive'
+  # pulling any post due to blanket interpolation here xD
+  # post '/:integration_name', to: 'webhooks#receive'
 
   resources :users
 end
