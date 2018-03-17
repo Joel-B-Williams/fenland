@@ -5,13 +5,11 @@ html, body {
 }
 
 header {
-	/*border: solid black 1px;*/
 	background-color: #008282;
 	text-align: center;
 }
 
 footer {
-	/*border: solid black 1px;*/
 	background-color: #008282;
 	position: absolute;
 	bottom: 0;
@@ -36,7 +34,6 @@ a {
 }
 
 nav a {
-	/*display: inline;*/
 	color: white;
 	border: solid white 1px;
 	padding: 3% 15% 5% 15%;
@@ -47,8 +44,30 @@ nav a:hover {
 	color: black;
 	border: solid white 1px;
 	background-color: white;
-	padding: 3% 15% 5% 15%;
+}
+
+.form {
+	width: 25%;
+	margin: auto;
+	margin-top: 10%;
+}
+
+.form a {
+	display: inline-block;
+	margin: auto;
+	width: 25%;
+	min-width: 60px;
+	padding: 2% 5% 2% 5%;
+	border: solid black 1px;
 	border-radius: 10px;
+	text-align: center;
+	color: white;
+	background: #008683;
+}
+
+.form a:hover {
+	background: white;
+	color: black;
 }
 
 .box {
