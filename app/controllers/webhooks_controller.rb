@@ -8,6 +8,9 @@ class WebhooksController < ApplicationController
 			data = params.as_json
 		end
 
+		p "*"*30
+		p data
+		p "*"*30
 # Parse and "do stuff" with data
 		# Webhook::Received.save(data: data, integration: params[:integration_name])
 
