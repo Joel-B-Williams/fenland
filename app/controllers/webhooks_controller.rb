@@ -8,7 +8,8 @@ class WebhooksController < ApplicationController
 			data = params.as_json
 		end
 
-		Webhook::Received.save(data: data, integration: params[:integration_name])
+# Parse and "do stuff" with data
+		# Webhook::Received.save(data: data, integration: params[:integration_name])
 
 		render nothing: true
 	end
