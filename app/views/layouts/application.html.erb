@@ -15,7 +15,7 @@
       </h1>
       <nav>
         <% if logged_in? %>
-          <%= link_to "Hook", hook_path %>
+          <%= link_to "Hook", hook_path(color: (@color || "white")) %>
           <%= link_to "Logout", logout_path, { method: :delete, class: "log" }%>
         <% else %>
           <%= link_to "Login",  login_path, { class: "log" } %>
