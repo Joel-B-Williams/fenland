@@ -15,7 +15,7 @@
       </h1>
       <nav>
         <% if logged_in? %>
-          <%= link_to "Logout", logout_path, { method: :delete, class: "log" }%>
+          <%= link_to "Logout", logout_path, { method: :delete, class: "log logout" }%>
         <% else %>
           <%= link_to "Login",  login_path, { class: "log" } %>
         <% end %>
