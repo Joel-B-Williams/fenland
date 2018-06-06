@@ -11,6 +11,6 @@ class WebhooksController < ApplicationController
 
     def hook
         p "*"* 50 
-        p request.webhook
+        p request
     end
 end
