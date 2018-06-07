@@ -15,14 +15,16 @@ class WebhooksController < ApplicationController
         p "*"* 150
         p "webhook request_parameters" 
         p request.request_parameters
+        p "*"* 150
+        p "webhook request_parameters.type" 
+        p request.request_parameters.type
        
-        if request.request_parameters["data"]["item"]["user"]["email"]
- 
-                p"*"*100 
-                p "Convert the Lead to a User here"
-        else
-            p"*"*100 
-            p "Error 486: Something has gone horribly pear-shaped"
-        end
+       # if request.request_parameters["data"]["item"]["user"]["email"]
+ #
+  ##             p "Convert the Lead to a User here"
+    #    else
+     #       p"*"*100 
+      #      p "Error 486: Something has gone horribly pear-shaped"
+       # end
     end
 end
