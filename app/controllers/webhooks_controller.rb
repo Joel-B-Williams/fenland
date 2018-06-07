@@ -23,9 +23,10 @@ class WebhooksController < ApplicationController
         p params['data'] 
         p "*"*150
         p "user_id"
-        p params.data['item']
-        p params['data']['item']['user']
-        p params['data']['item']['user']['user_id']
+        params = JSON.parse(params)
+        p params['data']['item']
+        #p params['data']['item']['user']
+        #p params['data']['item']['user']['user_id']
         p "*"*150
         p email
         p params['data']['item']['user']['email']
