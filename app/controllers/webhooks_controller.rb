@@ -16,7 +16,7 @@ class WebhooksController < ApplicationController
         p "webhook request_parameters" 
         p request.request_parameters
        
-        if request.request_parameters.data.item.user.email
+        if request.request_parameters["data"]["item"]["user"]["email"]
  
                 p"*"*100 
                 p "Convert the Lead to a User here"
