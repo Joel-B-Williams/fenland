@@ -2,8 +2,7 @@ class WebhooksController < ApplicationController
     skip_before_filter :verify_authenticity_token
     after_filter :cors_set_access_control_headers
 
-    #intercom = Intercom::Client.new(token: ENV["API_TOKEN"] )
-
+    
 
     def cors_set_access_control_headers
         headers['Access-Control-Allow-Origin'] = '*'
@@ -18,13 +17,7 @@ class WebhooksController < ApplicationController
         p request.request_parameters
        
         if request.request_parameters.data.item.user.email
-           # intercom.contacts.convert(
-           #     "contact": {
-            #        "user_id": request.request_parameters.data.item.user.user_id
-             #   },
-              #  "user": {
-               #     "email": request.request_parameters.data.item.user.email
-                #})
+ 
                 p"*"*100 
                 p "Convert the Lead to a User here"
         else
