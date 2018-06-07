@@ -18,7 +18,7 @@ class WebhooksController < ApplicationController
         p params
         p "*" * 150
         p ".data"
-        p params["data"] 
+        p params['data'] 
         p "*"*150
        
        
