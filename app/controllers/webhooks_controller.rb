@@ -28,7 +28,7 @@ class WebhooksController < ApplicationController
         uri = URI.parse("https://api.intercom.io/contacts/convert")
         request = Net::HTTP::Post.new(uri)
         request.content_type = "application/json"
-        request["Authorization"] = "Bearer <%= ENV["API_TOKEN"] %>"
+        request["Authorization"] = 'Bearer <%= ENV["API_TOKEN"] %>'
         request["Accept"] = "application/json"
         request.body = JSON.dump({
         "contact" => {
