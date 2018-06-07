@@ -22,7 +22,12 @@ class WebhooksController < ApplicationController
         p ".data"
         p params['data'] 
         p "*"*150
-
+        p "user_id"
+        p params['data']['item']['user']['user_id']
+        p "*"*150
+        p email
+        p params['data']['item']['user']['email']
+        p "*"*323
        
 
         uri = URI.parse("https://api.intercom.io/contacts/convert")
