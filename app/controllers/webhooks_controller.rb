@@ -15,9 +15,7 @@ class WebhooksController < ApplicationController
 
         params = request
         
-        p "*"* 150
-        p "webhook raw" 
-        p params.RAW_POST_DATA
+        
         p "*"* 150
         p "request_params" 
         p params.request_parameters
