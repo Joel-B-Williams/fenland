@@ -2,7 +2,9 @@ class WebhooksController < ApplicationController
     skip_before_filter :verify_authenticity_token
     after_filter :cors_set_access_control_headers
 
-    
+    require 'net/http'
+    require 'uri'
+    require 'json'
 
     def cors_set_access_control_headers
         headers['Access-Control-Allow-Origin'] = '*'
@@ -20,6 +22,35 @@ class WebhooksController < ApplicationController
         p ".data"
         p params['data'] 
         p "*"*150
+
+       
+
+        uri = URI.parse("https://api.intercom.io/contacts/convert")
+        request = Net::HTTP::Post.new(uri)
+        request.content_type = "application/json"
+        request["Authorization"] = "Bearer <%= ENV["API_TOKEN"] %>"
+        request["Accept"] = "application/json"
+        request.body = JSON.dump({
+        "contact" => {
+            "user_id" => params['data']['item']['user']['user_id']
+        },
+        "user" => {
+            "email" => params['data']['item']['user']['email']
+        }
+        })
+
+        req_options = {
+        use_ssl: uri.scheme == "https",
+        }
+
+        response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
+        p "*"* 150
+        p "curl response"
+        p http.request(request)
+        end
+
+        # response.code
+        # response.body
        
        
        # if request.request_parameters["data"]["item"]["user"]["email"]
