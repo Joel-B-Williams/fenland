@@ -12,12 +12,15 @@ class WebhooksController < ApplicationController
     end
 
     def hook
+
+        params = JSON.parse(request.request_parameters)
+        
         p "*"* 150
         p "webhook request_parameters" 
-        p request.request_parameters
+        p params
         p "*"* 150
         p "webhook request_parameters.type" 
-        p request.request_parameters.type
+        p params.type
        
        # if request.request_parameters["data"]["item"]["user"]["email"]
  #
