@@ -20,7 +20,7 @@ class WebhooksController < ApplicationController
         p params
         p "*"* 150
         p "webhook request_parameters.type" 
-        p params.type
+        p params["type"]
        
        # if request.request_parameters["data"]["item"]["user"]["email"]
  #
