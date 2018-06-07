@@ -16,11 +16,15 @@ class WebhooksController < ApplicationController
         params = request
         
         p "*"* 150
-        p "webhook request_parameters" 
-        p params
+        p "webhook raw" 
+        p params.RAW_POST_DATA
         p "*"* 150
-        #p "json parse" 
-        #p params
+        p "request_params" 
+        p params.request_parameters
+        p "*"* 150
+        p "filtered_params" 
+        p params.filtered_parameters
+        p "*"* 150
        
        # if request.request_parameters["data"]["item"]["user"]["email"]
  #
