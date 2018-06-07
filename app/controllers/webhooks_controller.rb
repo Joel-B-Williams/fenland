@@ -17,12 +17,10 @@ class WebhooksController < ApplicationController
         p "params"
         p params
         p "*" * 150
-        p "request"
-        p params.request 
+        p ".data"
+        p params.data 
         p "*"*150
-        p "request_params"
-        p params.request.request_parameters
-        p"*"*150
+       
        
        # if request.request_parameters["data"]["item"]["user"]["email"]
  #
