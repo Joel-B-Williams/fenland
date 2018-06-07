@@ -17,8 +17,14 @@ class WebhooksController < ApplicationController
         p "webhook request_parameters" 
         p request.request_parameters
        
-        if request.request_parameters.data.item.user 
-            
+        if request.request_parameters.data.item.user.email
+            intercom.contacts.convert(
+                "contact": {
+                    "user_id": request.request_parameters.data.item.user.user_id
+                },
+                "user": {
+                    "email": request.request_parameters.data.item.user.email
+                })
         else
             p"*"*100 
             p "Error 486: Something has gone horribly pear-shaped"
