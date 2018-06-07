@@ -10,7 +10,9 @@ class WebhooksController < ApplicationController
     end
 
     def hook
-        p "*"* 50 
-        p request
+        p "*"* 100
+        p "webhook request_parameters" 
+        p request.request_parameters
+       
     end
 end
