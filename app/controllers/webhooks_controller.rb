@@ -1,6 +1,6 @@
 class WebhooksController < ApplicationController
     skip_before_filter :verify_authenticity_token
-    after_filter :cors_set_access_control_headers
+    #after_filter :cors_set_access_control_headers
 
     require 'net/http'
     require 'uri'
