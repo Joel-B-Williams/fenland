@@ -19,19 +19,20 @@ class WebhooksController < ApplicationController
         p "params"
         p params
         p "*" * 150
-        p ".data"
-        p params['data'] 
-        p "*"*150
-        p "user_id"
-        params = JSON.parse(params)
+       # p ".data"
+        #p params['data'] 
+        #p "*"*150
+        #p "user_id"
+        #params = JSON.parse(params)
        # p params.data.item
-        p params['data']['item']
+       # p params['data']['item']
         #p params['data']['item']['user']['user_id']
-        p "*"*150
-        p email
-        p params['data']['item']['user']['email']
-        p "*"*323
+       # p "*"*150
+       # p email
+       # p params['data']['item']['user']['email']
+       # p "*"*323
        
+=begin
 
         uri = URI.parse("https://api.intercom.io/contacts/convert")
         request = Net::HTTP::Post.new(uri)
@@ -56,7 +57,7 @@ class WebhooksController < ApplicationController
         p "curl response"
         p http.request(request)
         end
-
+=end
         # response.code
         # response.body
        
