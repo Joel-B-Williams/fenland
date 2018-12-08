@@ -11,7 +11,7 @@
   <body>
     <header> 
       <h1> 
-        <%= link_to "Welcome to Fenland", root_path %> 
+        <%= link_to "InterFace", root_path %> 
       </h1>
       <nav>
         <% if logged_in? %>
@@ -28,7 +28,8 @@
     
     <%= yield %>
     
-    <footer> This is a test footer </footer>
+    <footer> 
+    </footer>
 
     <% if current_user %>
       <script>
@@ -40,14 +41,6 @@
           custom_launcher_selector: '.custom_launcher' 
         };
       </script>
-     
-   <!--    <script>
-        window.intercomSettings = {
-          app_id: '<%= ENV["APP_ID"] %>',
-          email: '<%= current_email %>',
-          custom_launcher_selector: '.custom_launcher' 
-        };
-      </script> -->
     <% else %>
       <script>
         window.intercomSettings = {

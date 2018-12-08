@@ -35,6 +35,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'rake', '~> 12.3.2'
+
 gem 'figaro'
 
 group :development, :test do
