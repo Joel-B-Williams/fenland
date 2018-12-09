@@ -1,21 +1,24 @@
 class WebhooksController < ApplicationController
+  protect_from_forgery with: :null_session
 
-  def initialize
+  def init
     p "*" * 50
     p 'You have initialized the app'
-    canvas = {
-      content: {
-        components: [
-          { type: "button", label: "Click ME!!!!", style: "primary", id: "url_button", action: {type: "submit"} }
-        ]
+    response = {
+      canvas: {
+        content: {
+          components: [{ 
+            type: "button", 
+            label: "Click ME!!!!", 
+            style: "primary", 
+            id: "url_button", 
+            action: {type: "submit"} 
+          }]
+        }
       }
     }
 
-    respond_to do |format|
-      format.json do
-        render json: canvas.to_json
-      end
-    end
+    render json: response.to_json
     
   end
   

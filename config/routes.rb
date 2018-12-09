@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  post '/initialize', to: 'webhooks#initialize'
+  post '/initialize', to: 'webhooks#init'
   post '/submit', to: 'webhooks#submit'
 
   resources :users
